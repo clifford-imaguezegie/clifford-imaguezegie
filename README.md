@@ -13,19 +13,50 @@ I focus on **making AI useful, verifiable and operationally grounded in complex 
 
 ### [TEAD AI — Agentic Telecom Network Investigation & RCA Platform](https://github.com/clifford-imaguezegie/telecom-ai-engineering-demo)
 
-**The problem — hours to investigate, days to report.** Complex mobile-network incidents involve interacting symptoms across radio access, capacity, signalling and supporting infrastructure. KPI thresholds alone may not reveal the underlying cause. Engineers often spend **hours** correlating PM counters, alarms, telemetry, configuration and technical documentation; preparation and approval of an official RCA report may take **days**, depending on incident complexity and organisational review. TEAD AI investigates how evidence-grounded agents can accelerate the *analytical investigation and draft RCA conclusion*, while retaining the evidence trail engineers need to verify those conclusions.
+**Evidence-Grounded Network Investigation and RCA in Under Five Minutes**
 
-**What I designed and built.** An experimental **5G RAN investigation architecture** combining ML-assisted fault localisation, network PM telemetry and structured observations, LangGraph-orchestrated specialist analysis, knowledge-grounded reasoning and a synthesis stage for root-cause conclusions. The work includes bounded execution, evidence provenance, evaluation traces and inference/cost controls. I also developed an interactive **Streamlit investigation cockpit** with executive and full-engineering views so stakeholders can replay recorded agent decisions, inspect supporting evidence and understand conclusions and limitations.
+TEAD AI is an experimental agentic AI platform designed to accelerate telecommunications network fault investigation through intelligent localisation, multi-agent engineering analysis and evidence-grounded root cause assessment.
 
-**Measured engineering outcomes**
+Complex mobile-network incidents can require hours of manual investigation, with engineers correlating network performance counters, alarms, telemetry, configurations and technical documentation. Preparation and approval of formal RCA reports can take considerably longer, depending on incident complexity and operational procedures.
 
-- **Accelerated network investigation and RCA:** Evaluated **nine synthetic 5G network investigation scenarios**, recording network assessment and fault localisation in **15.0–24.3 seconds** and complete evidence-grounded investigations in **2 minutes 48 seconds–4 minutes 33 seconds**.
-- **Evidence processing and inference optimisation:** Telecom networks generate immense volumes of PM telemetry, KPIs and diagnostic evidence, often exceeding LLM context-window limits. Designed and implemented deterministic evidence compression, intelligent aggregation and structured evidence representation for specialist-agent analysis. In the **CU Domain Specialist (SP08)**, reduced the estimated evidence payload by **98.7%—from approximately 17 million tokens to fewer than 260,000 tokens**. Across the experimental optimisation work, recorded investigation processing time improved from **approximately 30 minutes to under five minutes**, making the workflow substantially more time-efficient. The much smaller input payload also reduces input-token processing requirements and associated potential inference costs; exact monetary savings depend on model pricing and actual billed token usage.
-- **Controlled, traceable execution:** Incorporated bounded retries, token-budget controls, structured evidence handling and recorded agent traces to support repeatable evaluation and make investigation outputs auditable.
+**TEAD AI completed eight synthetic 5G incident investigations, producing evidence-grounded RCA conclusions in 2 to 5 minutes, alongside a separate healthy-network control in under 25 seconds.**
 
-**Operational value — from hours of investigation to minutes of evidence-grounded RCA.** Across the nine tested synthetic scenarios, TEAD AI generated recorded investigation outputs and RCA conclusions in **under five minutes**. Against operational workflows that may require hours of manual investigation and days for a formal report, this demonstrates the *potential* to reduce evidence-correlation effort, accelerate fault isolation, improve consistency of RCA documentation and support faster engineering decisions. These are **experimental analytical turnaround results**, not a measured reduction in production MTTR or a replacement for operator validation, formal RCA approval and sign-off. The architecture also provides a foundation for future policy-controlled closed-loop operations; autonomous remediation has not been deployed.
+The platform demonstrates the potential to reduce manual evidence-correlation effort, accelerate fault diagnosis, improve engineering productivity and support more consistent operational decision-making.
 
-> **Scope:** The public application replays previously completed investigations against **synthetic** network scenarios. It does not execute fresh LLM calls, poll live networks, perform live remediation or prove production network performance.
+#### What I Designed and Built
+
+Designed and implemented an experimental 5G RAN investigation architecture integrating:
+
+- **ML-Assisted Fault Localisation:** Network health assessment and affected-scope identification using two ML prediction tools and 15-minute network performance and event telemetry.
+- **Agentic Investigation & Orchestration:** LangGraph-based conditional routing, sequential specialist investigations across KPI, cell/peer, radio, processing, transport and configuration domains, and dedicated CU-domain investigation.
+- **Evidence-Grounded RCA:** Supervisor-led correlation of specialist findings, competing explanations and domain-specific RAG knowledge support to produce traceable root cause conclusions.
+- **Large-Scale Evidence Optimisation:** Deterministic evidence restructuring, compression and structured engineering representations to support LLM inference over large telecom telemetry datasets while retaining original source evidence.
+- **Inference Optimisation & Evaluation:** Token-budget management, cost-aware inference controls, structured-output validation, failure-handling mechanisms and recorded agent execution traces.
+- **Interactive Investigation Cockpit:** Streamlit-based Executive and Full Engineering experiences enabling inspection of recorded agent workflows, tool interactions, supporting network evidence and RCA findings.
+
+#### Measured Engineering Achievements
+
+| Engineering Metric | Experimental Result |
+| --- | --- |
+| Network assessment and fault localisation | **15.0–24.3 seconds** |
+| End-to-end incident investigation and RCA | **2m 48s–4m 33s** |
+| Specialist investigation | **42.1 seconds–1m 51.6s** |
+| Supervisor evidence synthesis and RCA | **1m 38.8s–2m 53.4s** |
+| CU-domain evidence representation optimisation | **Approximately 17.29 MB → 227 KB** |
+| Evidence payload-size reduction | **Approximately 98.7%** |
+| Recorded experimental scenarios | **9 total: 8 incidents + 1 healthy control** |
+
+The evidence optimisation result comes from Module 5 architecture development experiments. It measures payload representation size, not equivalent reductions in billed tokens, inference cost or end-to-end latency.
+
+#### Operational and Business Value
+
+- **Accelerated fault diagnosis:** Demonstrates the feasibility of completing structured, multi-domain AI investigations in minutes rather than requiring exclusively manual evidence correlation.
+- **Engineering productivity:** Automates significant portions of telemetry interpretation, specialist evidence analysis and draft RCA generation.
+- **Inference efficiency:** Reduces redundant evidence representation and supports more manageable context requirements, creating opportunities for lower-cost LLM execution.
+- **Explainable operational intelligence:** Preserves supporting observations, specialist outputs, uncertainty qualifications and investigation traceability for engineering review.
+- **Foundation for autonomous networks:** Establishes evidence-grounded diagnosis and decision-support capabilities that can evolve toward governed closed-loop automation, verification and self-healing operations.
+
+**Experimental scope:** Results are derived from completed synthetic 5G network investigations. The public application replays previously recorded agent executions rather than performing live network diagnosis. Production MTTR reduction, monetary savings, operator-approved RCA turnaround and autonomous remediation have not been demonstrated.
 
 ### [Telecom AI Knowledge Orchestration — RAG, MCP & Evidence-Aware Reasoning](https://github.com/clifford-imaguezegie/telecom-ai-knowledge-orchestration-demo)
 
