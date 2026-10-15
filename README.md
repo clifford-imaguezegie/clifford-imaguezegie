@@ -13,6 +13,8 @@ I focus on **making AI useful, verifiable and operationally grounded in complex 
 
 ### [TEAD AI — Agentic Telecom Network Investigation & RCA Platform](https://github.com/clifford-imaguezegie/telecom-ai-engineering-demo)
 
+**[Explore the TEAD AI Interactive Demo](https://tead-ai.streamlit.app/)** · [View Source Repository](https://github.com/clifford-imaguezegie/telecom-ai-engineering-demo)
+
 **Evidence-Grounded Network Investigation and RCA in Under Five Minutes**
 
 TEAD AI is an experimental agentic AI platform designed to accelerate telecommunications network fault investigation through intelligent localisation, multi-agent engineering analysis and evidence-grounded root cause assessment.
