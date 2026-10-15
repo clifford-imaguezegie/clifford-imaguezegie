@@ -62,6 +62,9 @@ The evidence optimisation result comes from Module 5 architecture development ex
 
 ### [Telecom AI Knowledge Orchestration — RAG, MCP & Evidence-Aware Reasoning](https://github.com/clifford-imaguezegie/telecom-ai-knowledge-orchestration-demo)
 
+**[Explore the Telecom AI Knowledge Orchestration Demo](https://telecom-ai-orchestration-693254716479.europe-west2.run.app/)** · [View Source Repository](https://github.com/clifford-imaguezegie/telecom-ai-knowledge-orchestration-demo)
+
+
 **The problem.** Technical telecom questions often require standards, architecture documentation and accurate domain context. Conventional LLM responses may be unsupported, but rigid retrieval-augmented generation can also become incomplete or misleading when retrieved evidence is insufficient. This project investigates **when retrieval helps, when it degrades answers and how to make the trade-off visible**.
 
 **What I designed and built.** A telecom knowledge-orchestration demonstration comparing **three reasoning modes**: (1) LLM-only answers, (2) strict evidence-grounded answers and (3) augmented reasoning that combines connected knowledge, controlled external evidence where appropriate and pretrained model knowledge with provenance. Its architecture uses **Gemma** for generation, **Granite** for routing/comparative evaluation, **BGE-M3 embeddings and FAISS** for semantic RAG, and **MCP-based knowledge access**. The documented vector corpus contains approximately **1.5 million telecom vectors**. The application was containerised and deployed using **Docker and Google Cloud Run**, with related Google Cloud build, registry and secret-management services.
