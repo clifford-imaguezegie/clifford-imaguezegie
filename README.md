@@ -60,6 +60,31 @@ The evidence optimisation result comes from Module 5 architecture development ex
 
 **Experimental scope:** Results are derived from completed synthetic 5G network investigations. The public application replays previously recorded agent executions rather than performing live network diagnosis. Production MTTR reduction, monetary savings, operator-approved RCA turnaround and autonomous remediation have not been demonstrated.
 
+### [Revision-Aware Repair Verification (RARV) — Gemma 4 Software Repair Agents](https://github.com/clifford-imaguezegie/revision-aware-repair-verification)
+
+**Independent research for the Google Gemma 4 Developer Agent Paper Track (2026)**
+
+**[Explore the Public Kaggle Companion](https://www.kaggle.com/code/cliffordimaguezegie/gemma4-revision-aware-repair-verification/notebook)** · [Research Source and Evidence](https://github.com/clifford-imaguezegie/revision-aware-repair-verification) · [CPU Reproduction Guide](https://github.com/clifford-imaguezegie/revision-aware-repair-verification/blob/main/evidence/REPRODUCE.md)
+
+**The problem.** Software-repair agents may rely on a passing test after they have changed the production code that was tested. Even an independently passing captured patch may fail to reach a verified submission. This project investigates how to make **test evidence freshness, test coverage, patch correctness and final delivery** separately auditable.
+
+**What I designed and built.** Implemented a revision-aware verification controller around **Gemma 4 31B**, integrating production-source fingerprinting, isolated trusted `pytest` receipts, an evidence ledger, policy-based rechecking, a common submission gate, exact patch capture and reconciliation with independent protected grading. The matched study compares **Policy B** (verify at submission) with **Policy C** (add a proactive recheck after an eligible edit invalidates a trusted pass).
+
+#### Research findings
+
+| Measure | Observed result |
+| --- | --- |
+| GP03 primary study | **9 matched task pairs; 18 autonomous runs** |
+| Independently graded captured-patch passes | **6/9 for B and 6/9 for C** |
+| Verified delivery of the same passing patch | **5/9 for B; 4/9 for C** |
+| Natural qualifying pass-to-edit events | **0 across 24 autonomous runs** (GP03–GP05) |
+| Controlled C failure detection | **1.150 s and 1.047 s**, before the first model request |
+| CPU reviewer demonstration | **6 trusted checks, zero model calls**, using the frozen controller |
+
+**Why it matters.** The study demonstrates an implemented assurance mechanism and documents distinct failure modes: a fresh but insufficient test, a protected-passing patch with an uncovered injected fault, and a passing captured patch that was never successfully delivered. The public companion provides a CPU-based reviewer entry point; the research repository preserves source, supporting evidence and reproduction instructions.
+
+> **Experimental scope:** The 6/9 results refer to independently graded **captured patches**, not necessarily submitted fixes. No natural proactive-recheck opportunities occurred in the autonomous runs, so the study does **not** establish that Policy C improves autonomous repair success. This is competition research, not a peer-reviewed publication.
+
 ### [Telecom AI Knowledge Orchestration — RAG, MCP & Evidence-Aware Reasoning](https://github.com/clifford-imaguezegie/telecom-ai-knowledge-orchestration-demo)
 
 **[Explore the Telecom AI Knowledge Orchestration Demo](https://telecom-ai-orchestration-693254716479.europe-west2.run.app/)** · [View Source Repository](https://github.com/clifford-imaguezegie/telecom-ai-knowledge-orchestration-demo)
